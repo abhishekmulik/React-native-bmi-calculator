@@ -1,21 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{useState} from 'react';
+import { StyleSheet,Text,View } from 'react-native';
+import BmiForm from './components/bmi/BmiForm';
+import { Header } from 'react-native-elements';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+  
+  return(
+    <SafeAreaProvider>
+    <View>
+      {/* <Header leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' } }}
+          centerComponent={{ text: 'BMI Calculator', style: { color: '#fff' } }}
+          rightComponent={{ icon: 'home', color: '#fff' }}/> */}
+          <Header centerComponent={{ text: 'BMI Calculator', style: { color: '#fff',fontWeight:'bold'} }}/> 
+      <BmiForm/>
     </View>
-  );
+    </SafeAreaProvider>
+    
+    
+    
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
